@@ -23,14 +23,14 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["URL_Frontend"],
     allow_methods=["*"],
     allow_headers=["*"],
     allow_credentials=True,
 )
 
 try:
-    model = tf.keras.models.load_model('app/braintumor.h5')
+    model = tf.keras.models.load_model('Your_Model')
 except Exception as e:
     raise RuntimeError(f"Error loading model: {str(e)}")
 # Preprocessing function to handle image inputs
